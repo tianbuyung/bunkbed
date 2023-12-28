@@ -1,7 +1,8 @@
 import { NestFactory } from '@nestjs/core';
-import { ReservationsModule } from './reservations.module';
 import { ValidationPipe } from '@nestjs/common';
 import { Logger } from 'nestjs-pino';
+
+import { ReservationsModule } from './reservations.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(ReservationsModule);
