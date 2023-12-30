@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Res, UseGuards } from '@nestjs/common';
+import { Controller, Post, Res, UseGuards } from '@nestjs/common';
 import { Response } from 'express';
 
 import { AuthService } from './auth.service';
@@ -18,10 +18,5 @@ export class AuthController {
   ) {
     await this.authService.login(user, response);
     response.send(user);
-  }
-
-  @Get()
-  getHello(): string {
-    return this.authService.getHello();
   }
 }
