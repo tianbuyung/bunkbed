@@ -5,7 +5,7 @@ import { JwtAuthGuard } from './guards/jwt-auth.guard';
 
 import { AuthService } from './auth.service';
 import { LocalAuthGuard } from './guards/local-auth.guard';
-import { CurrentUser } from './current-user.decorator';
+import { CurrentUser } from '@app/common';
 import { UserDocument } from './users/models/user.schema';
 
 @Controller('auth')
