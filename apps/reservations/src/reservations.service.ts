@@ -10,15 +10,20 @@ import { PAYMENTS_SERVICE } from '@app/common';
 export class ReservationsService {
   constructor(
     private readonly reservationsRepository: ReservationsRepository,
-    @Inject(PAYMENTS_SERVICE) paymentsService: ClientProxy,
+    @Inject(PAYMENTS_SERVICE) private readonly paymentsService: ClientProxy,
   ) {}
 
   async create(createReservationDto: CreateReservationDto, userId: string) {
-    return this.reservationsRepository.create({
-      ...createReservationDto,
-      timestamp: new Date(),
-      userId,
-    });
+    this.paymentsService
+      .send('create_charge', createReservationDto.charge)
+      .subscribe(async (response) => {
+        console.log(response);
+        const reservation = await this.reservationsRepository.create({
+          ...createReservationDto,
+          timestamp: new Date(),
+          userId,
+        });
+      });
   }
 
   async findAll() {
