@@ -19,12 +19,12 @@ export class NotificationsService {
     },
   });
 
-  async notifyEmail({ email }: NotifyEmailDto) {
+  async notifyEmail({ email, text }: NotifyEmailDto) {
     await this.transporter.sendMail({
       from: this.configService.get('SMTP_USER'),
       to: email,
       subject: 'Bunkbed Notification',
-      html: 'New reservation is coming',
+      text,
     });
   }
 }
