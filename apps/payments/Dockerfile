@@ -8,8 +8,10 @@ COPY tsconfig.json tsconfig.json
 
 RUN npm install
 
-COPY apps/notifications apps/notifications
+COPY apps/payments apps/payments
 COPY libs libs
+
+RUN cd apps/payments && npm install
 
 RUN npm run build
 
