@@ -1,0 +1,28 @@
+{
+  "name": "@bunkbed/payments",
+  "version": "1.0.0",
+  "description": "payments",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianbuyung/bunkbed.git#main"
+  },
+  "keywords": [
+    "payments"
+  ],
+  "author": "Septian Maulana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tianbuyung/bunkbed/issues"
+  },
+  "homepage": "https://github.com/tianbuyung/bunkbed/tree/main#readme",
+  "dependencies": {
+    "stripe": "^14.10.0"
+  }
+}
