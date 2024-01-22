@@ -1,0 +1,38 @@
+{
+  "name": "@bunkbed/auth",
+  "version": "1.0.0",
+  "description": "authentication",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianbuyung/bunkbed.git#main"
+  },
+  "keywords": [
+    "authentication"
+  ],
+  "author": "Septian Maulana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tianbuyung/bunkbed/issues"
+  },
+  "homepage": "https://github.com/tianbuyung/bunkbed/tree/main#readme",
+  "dependencies": {
+    "@nestjs/jwt": "^10.2.0",
+    "@nestjs/passport": "^10.0.3",
+    "bcryptjs": "^2.4.3",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/passport-jwt": "^3.0.13",
+    "@types/passport-local": "^1.0.38"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "@bunkbed/notifications",
+  "version": "1.0.0",
+  "description": "notifications",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tianbuyung/bunkbed.git#main"
+  },
+  "keywords": [
+    "notification"
+  ],
+  "author": "Septian Maulana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tianbuyung/bunkbed/issues"
+  },
+  "homepage": "https://github.com/tianbuyung/bunkbed/tree/main#readme",
+  "dependencies": {
+    "nodemailer": "^6.9.8"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.14"
+  }
+}
