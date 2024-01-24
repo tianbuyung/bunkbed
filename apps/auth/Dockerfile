@@ -7,6 +7,8 @@ COPY package-lock.json ./
 COPY tsconfig.json tsconfig.json
 COPY nest-cli.json nest-cli.json
 
+RUN npm install -g semver
+RUN npm cache clean --force
 RUN npm install
 
 COPY apps/auth apps/auth
