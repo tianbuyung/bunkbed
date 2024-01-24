@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: reservations
   name: reservations
@@ -10,15 +9,11 @@ spec:
   selector:
     matchLabels:
       app: reservations
-  strategy: {}
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: reservations
     spec:
       containers:
-      - image: asia-southeast1-docker.pkg.dev/bunkbed-410313/reservations/production
-        name: production
-        resources: {}
-status: {}
+        - image: asia-southeast1-docker.pkg.dev/bunkbed-410313/reservations/production
+          name: reservations
