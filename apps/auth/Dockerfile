@@ -3,22 +3,22 @@ FROM node:lts-alpine As development
 WORKDIR /usr/src/app
 
 COPY package.json ./
-COPY package-lock.json ./
+
 COPY tsconfig.json tsconfig.json
 COPY nest-cli.json nest-cli.json
 
-RUN npm install -g semver
-RUN npm cache clean --force
-RUN npm install
+RUN npm install -g pnpm
+
+RUN pnpm install
 
 COPY apps/auth apps/auth
 COPY libs libs
 
-RUN cd apps/auth && npm install
+RUN cd apps/auth && pnpm install
 
-RUN npm run build auth
+RUN pnpm run build auth
 
-FROM node:lts-alpine As production
+FROM node:alpine as production
 
 ARG NODE_ENV=production
 ENV NODE_ENV=${NODE_ENV}
@@ -26,9 +26,10 @@ ENV NODE_ENV=${NODE_ENV}
 WORKDIR /usr/src/app
 
 COPY package.json ./
-COPY package-lock.json ./
 
-RUN npm install --prod
+RUN npm install -g pnpm
+
+RUN pnpm install --prod
 
 COPY --from=development /usr/src/app/dist ./dist
 
